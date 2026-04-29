@@ -118,8 +118,42 @@ body {
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  transition: all 0.3s;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .call-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .call-btn i {
+    font-size: 16px;
+  }
+
+  .call-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .call-btn {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .call-text {
+    display: none; /* hide number */
+  }
+
+  .call-btn i {
+    font-size: 18px;
+  }
 }
 
 .call-btn:hover {
