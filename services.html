@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | BVC Reality Construction</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  
+  <style>
+    .services-hero {
+      height: 70vh;
+   background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+              url('hero-construction.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-top: 85px;
+    }
+
+    .services-hero h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3.5rem;
+      color: var(--dark);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
+    }
+
+    .service-icon {
+      font-size: 3.5rem;
+      color: var(--primary);
+      text-align: center;
+      padding: 2rem 0 1rem;
+    }
+
+    .service-content {
+      padding: 1.5rem 2rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-content h3 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .service-content p {
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .service-features li {
+      padding: 8px 0;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .service-features li:before {
+      content: "✔";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    .btn {
+      margin-top: auto;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s;
+      width: 100%;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #ea580c;
+      transform: translateY(-3px);
+    }
+
+    /* Why Choose Us */
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .why-card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s;
+      text-align: center;
+    }
+
+    .why-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(249, 115, 22, 0.18);
+    }
+
+    .why-card i {
+      font-size: 3.4rem;
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .step-card {
+      text-align: center;
+      background: white;
+      padding: 2.5rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0 auto 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .services-hero h1 { font-size: 2.9rem; }
+      .service-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container">
+        <div class="logo">
+          <img src="helo.jpeg" alt="BVC Reality Logo">
+        </div>
+        <div class="company-name">
+          BVC Reality<br>
+          <span>Construction</span>
+        </div>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="tel:+250788620718" class="call-btn">
+          <i class="fas fa-phone"></i>
+          <span class="call-text">+250 788 620 718</span>
+        </a>
+      </div>
+
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="services-hero">
+    <div>
+      <h1>Our Services</h1>
+      <p>Comprehensive Construction Solutions Built with Excellence</p>
+    </div>
+  </header>
+
+  <!-- Services Grid -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title">Our Core Services</h2>
+      
+      <div class="service-grid">
+
+        <!-- 1 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-building"></i></div>
+          <div class="service-content">
+            <h3>General Construction</h3>
+            <p>We deliver high-quality new building construction for residential and commercial projects from foundation to finishing.</p>
+            <div class="service-features">
+              <ul>
+                <li>New building construction (residential & commercial)</li>
+                <li>Design-build services</li>
+                <li>Ground-up construction</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <div class="service-content">
+            <h3>Renovation & Remodeling</h3>
+            <p>Expert renovation services that transform your existing spaces into modern, functional areas.</p>
+            <div class="service-features">
+              <ul>
+                <li>Home and office renovations</li>
+                <li>Kitchen & bathroom remodels</li>
+                <li>Structural modifications</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-road"></i></div>
+          <div class="service-content">
+            <h3>Civil & Infrastructure</h3>
+            <p>Professional infrastructure development including roads, drainage, and site preparation works.</p>
+            <div class="service-features">
+              <ul>
+                <li>Road & pavement construction</li>
+                <li>Drainage & sewage systems</li>
+                <li>Retaining walls & earthworks</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-plug"></i></div>
+          <div class="service-content">
+            <h3>Specialized Services</h3>
+            <p>Technical and finishing solutions including MEP, steel works, and high-end interior fit-outs.</p>
+            <div class="service-features">
+              <ul>
+                <li>Electrical, plumbing & MEP works</li>
+                <li>Steel fabrication & erection</li>
+                <li>Roofing & waterproofing</li>
+                <li>Interior fit-out & finishing</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-tasks"></i></div>
+          <div class="service-content">
+            <h3>Project Management</h3>
+            <p>End-to-end project management ensuring quality, cost control, and timely delivery.</p>
+            <div class="service-features">
+              <ul>
+                <li>Site supervision & quality control</li>
+                <li>Cost estimation & budgeting</li>
+                <li>Permit & compliance handling</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 6 New Service: Demolition & Site Preparation -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-trash"></i></div>
+          <div class="service-content">
+            <h3>Demolition & Site Preparation</h3>
+            <p>Safe, efficient, and environmentally responsible demolition and site clearing services to prepare your land for new development.</p>
+            <div class="service-features">
+              <ul>
+                <li>Controlled building demolition</li>
+                <li>Site clearing and excavation</li>
+                <li>Debris removal and waste management</li>
+                <li>Land leveling and preparation</li>
+              </ul>
+            </div>
+            <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose BVC Reality - Now with 9 points -->
+  <section class="about-section" style="background: #f8fafc;">
+    <div class="container">
+      <h2 class="section-title">Why Choose BVC Reality?</h2>
+      <p style="text-align: center; max-width: 850px; margin: 0 auto 3.5rem; font-size: 1.2rem;">
+        We go beyond construction — we build trust, deliver excellence, and create lasting value for every client.
+      </p>
+
+      <div class="why-choose-grid">
+        <div class="why-card">
+          <i class="fas fa-award"></i>
+          <h3>Proven Track Record</h3>
+          <p>Over 50 successfully completed projects across Kigali and Rwanda.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Top Safety Standards</h3>
+          <p>Strict safety protocols and zero-compromise safety culture on all sites.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-certificate"></i>
+          <h3>Fully Certified</h3>
+          <p>RDB registered, ISO 9001 certified, RSB compliant, and MININFRA approved.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-clock"></i>
+          <h3>On-Time Delivery</h3>
+          <p>We consistently complete projects on schedule and within budget.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-users"></i>
+          <h3>Client Focused</h3>
+          <p>Personalized service with regular updates and clear communication.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-handshake"></i>
+          <h3>Integrity & Transparency</h3>
+          <p>No hidden costs. Honest pricing and full accountability.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Innovative Approach</h3>
+          <p>We use modern construction techniques and quality materials.</p>
+        </div>
+        <div class="why-card">
+          <i class="fas fa-globe-africa"></i>
+          <h3>Local Expertise</h3>
+          <p>Deep knowledge of Rwandan building regulations and local conditions.</p>
+        </div>
+        <!-- New Added Card -->
+        <div class="why-card">
+          <i class="fas fa-star"></i>
+          <h3>After-Sales Support</h3>
+          <p>We provide continued support and maintenance even after project completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title">Our Working Process</h2>
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Consultation</h3>
+          <p>We understand your vision, needs, and budget.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Planning & Design</h3>
+          <p>Detailed planning, drawings, and accurate quotation.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Execution</h3>
+          <p>Professional construction with strict quality control.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Handover</h3>
+          <p>Final inspection and smooth project handover.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="helo.jpeg" alt="BVC Reality Logo" class="footer-logo">
+          <h3>BVC Reality</h3>
+          <p>Building strong foundations for the future.<br>Quality. Safety. Reliability.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get In Touch</h4>
+          <p><i class="fas fa-phone"></i> +250 788 620 718</p>
+          <p><i class="fas fa-envelope"></i> bvcrealitycompany250@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Working Hours</h4>
+          <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+          <p>Saturday: 8:00 AM - 12:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <div class="social-media">
+        <a href="https://www.facebook.com/bvcrealitycompany250"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/bvcrealitycompany250/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@user8606277855050?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.linkedin.com/company/bvcrealitycompany250"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 BVC Reality Company. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/250788620718" target="_blank" class="floating-whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

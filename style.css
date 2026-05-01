@@ -221,6 +221,9 @@ body {
   background: var(--primary);
   color: white;
 }
+a{
+  text-decoration: none;
+}
 
 .primary:hover {
   background: #ea580c;
