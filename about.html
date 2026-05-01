@@ -8,10 +8,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   
   <style>
+    :root {
+      --primary: #f97316;
+      --dark: #0f172a;
+    }
+
     .about-hero {
-      height: 70vh;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.82)), 
-                  url('hero-construction.jpg') center/cover no-repeat;
+      height: 75vh;
+       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+              url('hero-construction.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,19 +25,11 @@
       margin-top: 85px;
     }
 
-    .about-hero-content h1 {
-      font-size: 3.8rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .about-hero-content p {
-      font-size: 1.5rem;
-      max-width: 750px;
-      margin: 0 auto;
-    }
-
-    .about-section {
-      padding: 110px 0;
+    .section-title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3.5rem;
+      color: var(--dark);
     }
 
     .about-content {
@@ -42,129 +39,149 @@
       align-items: center;
     }
 
-    .about-text h3 {
-      color: var(--primary);
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-text h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1.8rem;
-      line-height: 1.25;
-      color: var(--dark);
-    }
-
     .about-text p {
-      font-size: 1.13rem;
-      line-height: 1.9;
-      margin-bottom: 1.8rem;
+      font-size: 1.15rem;
+      line-height: 1.95;
+      margin-bottom: 1.6rem;
       color: #475569;
-    }
-
-    .about-image {
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     }
 
     .about-image img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
+      border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     }
 
-    .about-image:hover img {
-      transform: scale(1.08);
-    }
-
-    /* Locations Section */
-    .locations-section {
-      background: #f8fafc;
-      padding: 100px 0;
-    }
-
-    .locations-grid {
+    /* Card Grid */
+    .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      gap: 2.2rem;
     }
 
-    .location-card {
+    .card {
       background: white;
+      padding: 2.8rem 2rem;
       border-radius: 16px;
-      padding: 2.5rem;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
       transition: all 0.4s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
-    .location-card:hover {
-      transform: translateY(-10px);
+    .card:hover {
+      transform: translateY(-12px);
       box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
     }
 
-    .location-card i {
-      font-size: 3rem;
+    .card i {
+      font-size: 3.2rem;
       color: var(--primary);
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.3rem;
     }
 
-    /* Meet Us Section */
-    .meet-us-section {
-      padding: 100px 0;
+    .card h3 {
+      margin-bottom: 1rem;
     }
 
-    .meet-us-grid {
+    /* Unified Button Style */
+    .card .btn {
+      margin-top: auto;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+      width: 100%;                    /* Makes both buttons same width */
+      max-width: 280px;               /* Prevents them from being too wide */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #ea580c;
+      transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      height: 50px;
+    }
+
+    .btn-whatsapp:hover {
+      background: #20ba5a;
+      transform: translateY(-3px);
+    }
+
+    /* Team Section */
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
-      margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
-    .meet-card {
+    .team-card {
       background: white;
-      padding: 3rem 2rem;
       border-radius: 16px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       text-align: center;
-      transition: all 0.4s;
     }
 
-    .meet-card:hover {
-      transform: translateY(-12px);
+    .team-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
     }
 
-    .meet-card i {
-      font-size: 3.5rem;
+    .team-info {
+      padding: 1.5rem;
+    }
+
+    .team-info h3 {
+      margin-bottom: 0.3rem;
+    }
+
+    .team-info p {
       color: var(--primary);
-      margin-bottom: 1.5rem;
+      font-weight: 600;
     }
 
     .stats {
       background: var(--dark);
       color: white;
-      padding: 100px 0;
+      padding: 110px 0;
       text-align: center;
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 3.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 3rem;
     }
 
     .stat-item h3 {
-      font-size: 3.5rem;
+      font-size: 3.6rem;
       color: var(--primary);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     @media (max-width: 768px) {
-      .about-content {
-        grid-template-columns: 1fr;
-      }
+      .about-hero h1 { font-size: 2.9rem; }
+      .about-content { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -208,111 +225,178 @@
   <!-- Hero -->
   <header class="about-hero">
     <div class="about-hero-content">
-      <h1>About BVC Reality</h1>
-      <p>Building Rwanda with Strength, Integrity, and Vision Since 2018</p>
+      <h1>About US BVC Reality</h1>
+      <p>Building Rwanda with Excellence, Trust & Professionalism Since 2018</p>
     </div>
   </header>
 
-  <!-- Main Story -->
+  <!-- Who We Are -->
   <section class="about-section">
     <div class="container">
       <div class="about-content">
         <div class="about-text">
-          <h3>Our Story</h3>
-          <h2>From a Small Team to a Trusted Name in Rwandan Construction</h2>
+          <h3>Who We Are</h3>
+          <h2>A Trusted Construction Leader in Rwanda</h2>
           <p>
-            Founded in 2018 in Kigali, BVC Reality began with a vision to raise the standard of construction 
-            in Rwanda through quality, professionalism, and reliability.
+            Founded in 2018, BVC Reality has grown into one of the most respected construction companies in Kigali and across Rwanda. 
+            We specialize in residential, commercial, industrial, and infrastructure projects with a strong commitment to quality, safety, and timely delivery.
           </p>
           <p>
-            Today, we have successfully delivered over 50 major projects including residential estates, 
-            commercial buildings, industrial facilities, and road infrastructure across Kigali and beyond.
-          </p>
-          <p>
-            We are proud to contribute to Rwanda’s development by building strong, durable, and modern structures 
-            that will serve communities for generations to come.
+            Our experienced team of engineers, architects, and skilled craftsmen uses modern techniques combined with local expertise to deliver exceptional results.
           </p>
         </div>
-        
         <div class="about-image">
-          <img src="project-commercial.jpg" alt="BVC Reality Team on Construction Site">
+          <img src="assets/team.png" alt="BVC Reality Team">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Our Locations -->
-  <section class="locations-section">
+  <!-- Why Choose Us -->
+  <section class="about-section" style="background: #f8fafc;">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 3rem;">Our Locations</h2>
-      <div class="locations-grid">
-        <div class="location-card">
+      <h2 class="section-title">Why Choose BVC Reality?</h2>
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-gem"></i>
+          <h3>Superior Quality</h3>
+          <p>We never compromise on materials and workmanship. Quality is our hallmark.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-clock"></i>
+          <h3>Timely Delivery</h3>
+          <p>We respect deadlines and consistently deliver projects on or before schedule.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Safety First</h3>
+          <p>Strict adherence to safety standards to protect our team and clients.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-handshake"></i>
+          <h3>Transparency & Integrity</h3>
+          <p>Honest communication and full transparency throughout every project.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Innovation</h3>
+          <p>We adopt modern construction technologies and best practices.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-users"></i>
+          <h3>Client Satisfaction</h3>
+          <p>Your vision and satisfaction drive everything we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title">Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/eng1.png" alt="Managing Director">
+          <div class="team-info">
+            <h3>Eng. RWIGAMBA </h3>
+            <p>Managing Director & Founder</p>
+            <h3>+250788620718</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="assets/eng2.png" alt="Head of Projects">
+          <div class="team-info">
+            <h3>Eng. Aline Mukeshimana</h3>
+            <p>Head of Projects</p>
+            <h3>+250780000000</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="assets/eng3.png" alt="Senior Engineer">
+          <div class="team-info">
+            <h3>Eng. Olivier Niyonsaba</h3>
+            <p>Senior Civil Engineer</p>
+            <h3>+25078000000</h3>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="assets/eng4.png" alt="Lead Architect">
+          <div class="team-info">
+            <h3>Arch. Marie Claire Uwimana</h3>
+            <p>Lead Architect</p>
+            <h3>+250780000000</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications & Affiliations -->
+  <section class="about-section" style="background: #f8fafc;">
+    <div class="container">
+      <h2 class="section-title">Certifications & Affiliations</h2>
+      <div class="card-grid">
+        <div class="card">
+          <i class="fas fa-certificate"></i>
+          <h3>ISO 9001:2015</h3>
+          <p>Quality Management System Certified</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-certificate"></i>
+          <h3>RDB Registered</h3>
+          <p>Registered with Rwanda Development Board</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-certificate"></i>
+          <h3>RSB Certified</h3>
+          <p>Rwanda Standards Board Compliant</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-certificate"></i>
+          <h3>Occupational Safety & Health</h3>
+          <p>Certified Safety Standards</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-building"></i>
+          <h3>MININFRA Approved</h3>
+          <p>Ministry of Infrastructure Approved Contractor</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-award"></i>
+          <h3>Industry Recognized</h3>
+          <p>Member of Rwanda Construction Industry Federation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations & Meet Us -->
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title">Our Locations & How to Meet Us</h2>
+      <div class="card-grid">
+        <div class="card">
           <i class="fas fa-map-marker-alt"></i>
           <h3>Head Office</h3>
-          <p><strong>Kigali, Rwanda</strong><br>
-             Remera, Gasabo District<br>
-             Near Remera Roundabout</p>
+          <p>Remera, Gasabo District<br>Kigali, Rwanda</p>
         </div>
-        <div class="location-card">
-          <i class="fas fa-map-marker-alt"></i>
-          <h3>Project Sites</h3>
-          <p>Kicukiro District<br>
-             Kimihurura<br>
-             Remera<br>
-             Gahanga<br>
-             Kanombe</p>
-        </div>
-        <div class="location-card">
+
+        <!-- Site Visit Card -->
+        <div class="card">
           <i class="fas fa-hard-hat"></i>
-          <h3>Operational Areas</h3>
-          <p>Kigali Province<br>
-             Southern Province<br>
-             Eastern Province<br>
-             Nationwide Projects</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Want to Meet Us? / Meet Us Where We Work -->
-  <section class="meet-us-section">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 1rem;">Want to Meet Us?</h2>
-      <p style="text-align: center; font-size: 1.3rem; max-width: 800px; margin: 0 auto 4rem;">
-        Whether you want to discuss a new project, visit our office, or see our work in progress — we’d love to meet you.
-      </p>
-
-      <div class="meet-us-grid">
-        <div class="meet-card">
-          <i class="fas fa-building"></i>
-          <h3>Visit Our Office</h3>
-          <p>Come to our head office in Remera, Kigali.<br>
-             We welcome clients for meetings, consultations, and project discussions.</p>
-          <br>
-          <a href="tel:+250788620718" class="btn primary" style="padding: 12px 30px; font-size: 1.05rem;">
-            <i class=""></i> Call to Schedule
-          </a>
+          <h3>Site Visits</h3>
+          <p>We organize guided visits to our ongoing project sites so you can see the quality of our work firsthand.</p>
+          <a href="contact.html" class="btn btn-primary">Request Site Visit</a>
         </div>
 
-        <div class="meet-card">
-          <i class="fas fa-hard-hat"></i>
-          <h3>Meet Us Where We Work</h3>
-          <p>Visit our ongoing project sites and see the quality of our work firsthand.<br>
-             We regularly arrange site visits for serious clients and partners.</p>
-          <br>
-          <a href="contact.html" class="btn primary" style="padding: 12px 30px; font-size: 1.05rem;">
-            Request Site Visit
-          </a>
-        </div>
-
-        <div class="meet-card">
-          <i class="fab fa-whatsapp"></i>
-          <h3>Chat With Us</h3>
-          <p>Have quick questions? Reach out directly on WhatsApp.<br>
-             Our team responds fast and professionally.</p>
-          <br>
-          <a href="https://wa.me/250788620718" target="_blank" class="btn primary" style="padding: 12px 30px; font-size: 1.05rem; background: #25D366; border: none;">
-            <i class=""></i> Message on WhatsApp
+        <!-- WhatsApp Card - Now same size -->
+        <div class="card">
+          <i class="fab fa-whatsapp" style="color: #20ba5a;"></i>
+          <h3>WhatsApp Support</h3>
+          <p>Get quick and professional responses for any inquiries or consultations.</p>
+          <a href="https://wa.me/250788620718" target="_blank" class="btn btn-whatsapp">
+            <i class=""></i> Chat on WhatsApp
           </a>
         </div>
       </div>
@@ -343,7 +427,7 @@
     </div>
   </section>
 
-  <!-- Footer - Exactly same as index.html -->
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -391,7 +475,7 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- Floating WhatsApp -->
   <a href="https://wa.me/250788620718" target="_blank" class="floating-whatsapp">
     <i class="fab fa-whatsapp"></i>
   </a>
