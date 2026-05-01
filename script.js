@@ -38,5 +38,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Project Filter — only initialize when filter buttons exist
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card-pro');
+
+  if (filterBtns.length && projectCards.length) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeInUp 0.4s ease forwards';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+
+      // Keyboard activation for accessibility
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  }
+
   console.log("%cBVC Reality Website Loaded Successfully!", "color: #f97316; font-size: 16px; font-weight: bold;");
 });

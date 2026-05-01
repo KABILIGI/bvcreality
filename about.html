@@ -6,193 +6,16 @@
   <title>About Us | BVC Reality Construction</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  
-  <style>
-    :root {
-      --primary: #f97316;
-      --dark: #0f172a;
-    }
-
-    .about-hero {
-      height: 75vh;
-       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
-              url('hero-construction.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      margin-top: 85px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 3.5rem;
-      color: var(--dark);
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about-text p {
-      font-size: 1.15rem;
-      line-height: 1.95;
-      margin-bottom: 1.6rem;
-      color: #475569;
-    }
-
-    .about-image img {
-      width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    }
-
-    /* Card Grid */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.2rem;
-    }
-
-    .card {
-      background: white;
-      padding: 2.8rem 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: all 0.4s;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 20px 40px rgba(249, 115, 22, 0.15);
-    }
-
-    .card i {
-      font-size: 3.2rem;
-      color: var(--primary);
-      margin-bottom: 1.3rem;
-    }
-
-    .card h3 {
-      margin-bottom: 1rem;
-    }
-
-    /* Unified Button Style */
-    .card .btn {
-      margin-top: auto;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 1.05rem;
-      transition: all 0.3s;
-      width: 100%;                    /* Makes both buttons same width */
-      max-width: 280px;               /* Prevents them from being too wide */
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #ea580c;
-      transform: translateY(-3px);
-    }
-
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
-      height: 50px;
-    }
-
-    .btn-whatsapp:hover {
-      background: #20ba5a;
-      transform: translateY(-3px);
-    }
-
-    /* Team Section */
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-    }
-
-    .team-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .team-card img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-    }
-
-    .team-info {
-      padding: 1.5rem;
-    }
-
-    .team-info h3 {
-      margin-bottom: 0.3rem;
-    }
-
-    .team-info p {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .stats {
-      background: var(--dark);
-      color: white;
-      padding: 110px 0;
-      text-align: center;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 3rem;
-    }
-
-    .stat-item h3 {
-      font-size: 3.6rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-
-    @media (max-width: 768px) {
-      .about-hero h1 { font-size: 2.9rem; }
-      .about-content { grid-template-columns: 1fr; }
-    }
-  </style>
+  <!-- About page styles moved to style.css -->
 </head>
-<body>
+<body class="about-page">
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <div class="logo-container">
         <div class="logo">
-          <img src="helo.jpeg" alt="BVC Reality Logo">
+          <img src="helo.jpeg" alt="BVC Reality Logo" loading="eager" decoding="async">
         </div>
         <div class="company-name">
           BVC Reality<br>
@@ -202,7 +25,7 @@
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="achievements.html">Achievements</a></li>
@@ -210,7 +33,7 @@
       </ul>
 
       <div class="nav-actions">
-        <a href="tel:+250788620718" class="call-btn">
+        <a href="tel:+250788620718" class="call-btn" aria-label="Call +250 788 620 718">
           <i class="fas fa-phone"></i>
           <span class="call-text">+250 788 620 718</span>
         </a>
@@ -246,14 +69,14 @@
           </p>
         </div>
         <div class="about-image">
-          <img src="assets/team.png" alt="BVC Reality Team">
+          <img src="assets/team.png" alt="BVC Reality Team" loading="lazy" decoding="async" srcset="assets/team.png 600w, assets/team.png 1200w" sizes="(max-width: 768px) 100vw, 50vw">
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="about-section" style="background: #f8fafc;">
+  <section class="about-section bg-light">
     <div class="container">
       <h2 class="section-title">Why Choose BVC Reality?</h2>
       <div class="card-grid">
@@ -297,7 +120,7 @@
       <h2 class="section-title">Meet Our Team</h2>
       <div class="team-grid">
         <div class="team-card">
-          <img src="assets/eng1.png" alt="Managing Director">
+          <img src="assets/eng1.png" alt="Managing Director" loading="lazy" decoding="async" srcset="assets/eng1.png 400w, assets/eng1.png 800w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="team-info">
             <h3>Eng. RWIGAMBA </h3>
             <p>Managing Director & Founder</p>
@@ -305,7 +128,7 @@
           </div>
         </div>
         <div class="team-card">
-          <img src="assets/eng2.png" alt="Head of Projects">
+          <img src="assets/eng2.png" alt="Head of Projects" loading="lazy" decoding="async" srcset="assets/eng2.png 400w, assets/eng2.png 800w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="team-info">
             <h3>Eng. Aline Mukeshimana</h3>
             <p>Head of Projects</p>
@@ -313,7 +136,7 @@
           </div>
         </div>
         <div class="team-card">
-          <img src="assets/eng3.png" alt="Senior Engineer">
+          <img src="assets/eng3.png" alt="Senior Engineer" loading="lazy" decoding="async" srcset="assets/eng3.png 400w, assets/eng3.png 800w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="team-info">
             <h3>Eng. Olivier Niyonsaba</h3>
             <p>Senior Civil Engineer</p>
@@ -321,7 +144,7 @@
           </div>
         </div>
         <div class="team-card">
-          <img src="assets/eng4.png" alt="Lead Architect">
+          <img src="assets/eng4.png" alt="Lead Architect" loading="lazy" decoding="async" srcset="assets/eng4.png 400w, assets/eng4.png 800w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="team-info">
             <h3>Arch. Marie Claire Uwimana</h3>
             <p>Lead Architect</p>
@@ -333,7 +156,7 @@
   </section>
 
   <!-- Certifications & Affiliations -->
-  <section class="about-section" style="background: #f8fafc;">
+  <section class="about-section bg-light">
     <div class="container">
       <h2 class="section-title">Certifications & Affiliations</h2>
       <div class="card-grid">
@@ -432,7 +255,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="helo.jpeg" alt="BVC Reality Logo" class="footer-logo">
+          <img src="helo.jpeg" alt="BVC Reality Logo" class="footer-logo" loading="lazy" decoding="async">
           <h3>BVC Reality</h3>
           <p>Building strong foundations for the future.<br>Quality. Safety. Reliability.</p>
         </div>

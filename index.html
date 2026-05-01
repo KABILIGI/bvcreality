@@ -6,20 +6,18 @@
   <title>BVC Reality | Building Strong Foundations</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
- 
-  </style>
+  <!-- Page styles are in style.css -->
 </head>
-<body>
+<body class="home-page">
 
   
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       
       <!-- Logo + Company Name -->
 <div class="logo-container">
   <div class="logo">
-    <img src="helo.jpeg" alt="BVC Reality Logo">
+    <img src="helo.jpeg" alt="BVC Reality Logo" loading="eager" decoding="async">
   </div>
   <div class="company-name">
     BVC Reality<br>
@@ -29,7 +27,7 @@
 
       <!-- Menu -->
       <ul class="nav-links">
-        <li><a href="#" class="active">Home</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="projects.html">Projects</a></li>
@@ -39,7 +37,7 @@
 
       <!-- Call Button -->
      <div class="nav-actions">
-  <a href="tel:+250788620718" class="call-btn">
+  <a href="tel:+250788620718" class="call-btn" aria-label="Call +250 788 620 718">
     <i class="fas fa-phone"></i>
     <span class="call-text">+250 788 620 718</span>
   </a>
@@ -115,28 +113,28 @@
     <div class="container">
       <h2>Recent Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
-          <img src="assets/driving.jpeg" alt="Residential Project">
+        <a href="projects.html#project-driving" class="project-card" aria-label="View Automated Driving Licence Testing Center on Projects page">
+          <img src="assets/driving.jpeg" alt="Residential Project" loading="lazy" decoding="async" srcset="assets/driving.jpeg 600w, assets/driving.jpeg 1200w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="project-info">
             <h3> AUTMATED TESTS FOR NEW MODELS DRIVING licences.</h3>
             <p>Nyinangarama, Rulindo • 2026</p>
             <p>SinaGerald owner</p>
           </div>
-        </div>
-        <div class="project-card">
-          <img src="project-industrial.jpg" alt="Road Project">
+        </a>
+        <a href="projects.html#project-industrial" class="project-card" aria-label="View Industrial Facility Rehabilitation on Projects page">
+          <img src="project-industrial.jpg" alt="Road Project" loading="lazy" decoding="async" srcset="project-industrial.jpg 600w, project-industrial.jpg 1200w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="project-info">
             <h3>industrial Rehabilitation</h3>
             <p>Kicukiro District • 2024</p>
           </div>
-        </div>
-        <div class="project-card">
-          <img src="project-residential.jpg" alt="Commercial Project">
+        </a>
+        <a href="projects.html#project-office" class="project-card" aria-label="View Commercial Office Block on Projects page">
+          <img src="project-residential.jpg" alt="Commercial Project" loading="lazy" decoding="async" srcset="project-residential.jpg 600w, project-residential.jpg 1200w" sizes="(max-width: 768px) 100vw, 33vw">
           <div class="project-info">
             <h3>Commercial Office Block</h3>
             <p>Kimihurura, Kigali • 2025</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -147,7 +145,7 @@
       <div class="footer-grid">
         <!-- Logo & Info -->
         <div class="footer-col">
-          <img src="helo.jpeg" alt="BVC Reality Logo" class="footer-logo">
+          <img src="helo.jpeg" alt="BVC Reality Logo" class="footer-logo" loading="lazy" decoding="async">
           <h3>BVC Reality</h3>
           <p>Building strong foundations for the future.<br>Quality. Safety. Reliability.</p>
         </div>
