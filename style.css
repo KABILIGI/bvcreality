@@ -8,9 +8,12 @@
   --primary: #f97316;
   --dark: #0f172a;
   --light: #f8fafc;
+  --nav-height: 85px;
 }
 
 body {
+  /* account for fixed navbar when jumping to anchors */
+  scroll-padding-top: var(--nav-height);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
@@ -179,7 +182,7 @@ body {
   text-align: center;
   color: white;
   position: relative;
-  margin-top: 85px;
+  margin-top: var(--nav-height);
 }
 
 .hero-content {
@@ -244,6 +247,8 @@ a{
 /* ====================== SECTIONS ====================== */
 section {
   padding: 100px 0;
+  /* ensure anchor targets clear the fixed header */
+  scroll-margin-top: calc(var(--nav-height) + 12px);
 }
 
 .container {
@@ -423,10 +428,10 @@ footer {
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
-    top: 85px;
+    top: var(--nav-height);
     left: -100%;
     width: 100%;
-    height: calc(100vh - 85px);
+    height: calc(100vh - var(--nav-height));
     background: white;
     flex-direction: column;
     align-items: center;
@@ -465,7 +470,7 @@ footer {
   justify-content: center;
   text-align: center;
   color: white;
-  margin-top: 85px;
+  margin-top: var(--nav-height);
 }
 
 .projects-hero h1 {
@@ -1023,7 +1028,7 @@ footer {
   justify-content: center;
   text-align: center;
   color: white;
-  margin-top: 85px;
+  margin-top: var(--nav-height);
 }
 
 .about-hero h1 { font-size: 3.2rem; }
@@ -1129,7 +1134,7 @@ footer {
   justify-content: center;
   text-align: center;
   color: white;
-  margin-top: 85px;
+  margin-top: var(--nav-height);
 }
 
 .services-hero h1 { font-size: 3.8rem; margin-bottom: 1rem; }
@@ -1325,7 +1330,13 @@ footer {
 @media (max-width: 768px) {
   .achievements-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
-  .hero { height: 60vh; margin-top: 85px; }
+  .hero { min-height: calc(100vh - var(--nav-height)); margin-top: var(--nav-height); }
+  /* Make hero content start below header and fit on small screens */
+  .hero { min-height: calc(100vh - var(--nav-height)); margin-top: var(--nav-height); align-items: flex-start; padding-top: calc(var(--nav-height) + 14px); }
+  .hero h1 { font-size: 2.2rem; }
+  .slogan { font-size: 1rem; }
+  .hero-buttons { gap: 1rem; }
+  .btn { padding: 12px 20px; font-size: 0.95rem; }
   .achievement-card img { height: 180px; }
   .project-card img { height: 200px; }
 }

@@ -3,10 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hamburger Menu
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
+  const navbar = document.querySelector('.navbar');
+
+  // Keep a CSS var in sync with the real navbar height so fixed header offsets work
+  function updateNavHeight() {
+    if (!navbar) return;
+    const h = navbar.offsetHeight || 85;
+    document.documentElement.style.setProperty('--nav-height', h + 'px');
+  }
+
+  // init and keep updated on resize
+  updateNavHeight();
+  window.addEventListener('resize', updateNavHeight);
 
   hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    
+    // update height after menu toggle in case layout changed
+    setTimeout(updateNavHeight, 80);
     // Change icon between bars and times
     const icon = hamburger.querySelector('i');
     if (icon.classList.contains('fa-bars')) {
@@ -25,6 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const icon = hamburger.querySelector('i');
       icon.classList.remove('fa-times');
       icon.classList.add('fa-bars');
+      // restore nav height after closing
+      setTimeout(updateNavHeight, 60);
     });
   });
 
