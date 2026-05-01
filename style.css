@@ -185,6 +185,21 @@ body {
   margin-top: var(--nav-height);
 }
 
+/* Home page: slightly shorter hero to avoid large top image when scrolling */
+.home-page .hero {
+  min-height: 72vh;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .home-page .hero {
+    /* Keep mobile hero compact so content and buttons remain visible */
+    min-height: 70vh;
+    padding-top: calc(var(--nav-height) + 8px);
+    align-items: flex-start;
+  }
+}
+
 .hero-content {
   max-width: 900px;
   padding: 0 20px;
